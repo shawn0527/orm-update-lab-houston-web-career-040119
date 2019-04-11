@@ -38,6 +38,8 @@ class Student
 
   def self.find_by_name(name)
     DB[:conn].execute('SELECT * FROM students WHERE name = ? LIMIT 1', name)
+
+    binding.pry
   end
 
 
