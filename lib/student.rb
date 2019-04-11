@@ -37,7 +37,9 @@ class Student
 
 
   def self.find_by_name(name)
-    DB[:conn].execute('SELECT * FROM students WHERE name = ?', name)
+    row_arr = DB[:conn].execute('SELECT * FROM students WHERE name = ?', name)
+
+    self.new_from_db(row_arr.flatten)
 
     binding.pry
   end
