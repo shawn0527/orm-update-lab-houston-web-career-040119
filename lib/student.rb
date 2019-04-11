@@ -40,7 +40,8 @@ class Student
     row_arr = DB[:conn].execute('SELECT * FROM students WHERE name = ? LIMIT 1', name)
 
     row_arr.map do |row|
-    self.new_from_db(row)
+      self.new_from_db(row)
+    end.first
 
     # binding.pry
   end
