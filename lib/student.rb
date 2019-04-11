@@ -34,28 +34,28 @@ class Student
   # #   new_student.id = row[0]
   # #   new_student
   # # end
-  # 
-  # 
+  #
+  #
   # def self.find_by_name(name)
   #   row_arr = DB[:conn].execute('SELECT * FROM students WHERE name = ? LIMIT 1', name)
-  # 
+  #
   #   row_arr.map do |row|
   #     self.new_from_db(row)
   #   end.first
-  # 
+  #
   #   # binding.pry
   # end
-  # 
+  #
   # def self.create(name, grade)
   #   new_student = Student.new(name,grade)
   #   new_student.save
   # end
-  # 
-  # 
-  # 
+  #
+  #
+  #
   # def update
   #   DB[:conn].execute('UPDATE students SET name = ? AND grade = ? WHERE id = ?', self.name, self.grade, self.id)
-  # 
+  #
   #   # binding.pry
   #   # 0
   # end
@@ -64,7 +64,7 @@ class Student
       self.update
     else
       sql = <<-SQL
-        INSERT INTO students (name, grade) 
+        INSERT INTO students (name, grade)
         VALUES (?, ?)
       SQL
 
@@ -72,7 +72,7 @@ class Student
 
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
     end
-    
+
   end
 
   def self.create(name, grade)
