@@ -41,7 +41,7 @@ class Student
 
     row_arr.map do |row|
       self.new_from_db(row)
-    end[0]
+    end.first
 
     # binding.pry
   end
