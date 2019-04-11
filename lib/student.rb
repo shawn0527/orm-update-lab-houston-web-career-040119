@@ -41,7 +41,7 @@ class Student
 
     self.new_from_db(row_arr.flatten)
 
-    binding.pry
+    # binding.pry
   end
 
 
