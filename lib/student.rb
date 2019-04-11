@@ -44,7 +44,10 @@ class Student
     # binding.pry
   end
 
-  def self.create(name, age)
+  def self.create(name, grade)
+    new_student = Student.new(name,grade)
+    new_student.save
+
 
 
   def update
