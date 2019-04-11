@@ -24,7 +24,7 @@ class Student
       DB[:conn].execute('INSERT INTO students(name, grade) VALUES(?, ?)', self.name, self.grade)
       @id = DB[:conn].execute('SELECT last_insert_rowid() FROM students')[0][0]
     else
-      DB[:conn].execute('UPDATE students SET name = ? AND grade = ? WHERE id = ?', self.name, self.grade, self.id)
+      self.update
     end
   end
   # Remember, you can access your database connection anywhere in this class
